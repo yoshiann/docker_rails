@@ -21,7 +21,8 @@ services:
     stdin_open: true
 #疑似端末（キーボードによる入力）をコンテナに結びつける設定
     tty: true
-    command: dockerize -wait tcp://db:3306 -timeout 20s bundle exec rails s -b 0.0.0.0
+    #command: dockerize -wait tcp://db:3306 -timeout 20s bundle exec rails s -b 0.0.0.0
+    command: bundle exec rails s -b 0.0.0.0
     #command: dockerize -wait tcp://db:3306 -timeout 20s bundle exec unicorn -c config/unicorn.rb
 volumes:
   mysql-data:
